@@ -20,11 +20,10 @@ const findIndexOfMinimumValue = function(array, index) {
 }
 
 const selectionSort = function(array) {
-  sortedArray = array
   for (var i = 0; i < array.length; i++) {
-    var minimumIndex = findIndexOfMinimumValue(sortedArray, i)
-    swap(sortedArray, i, minimumIndex)
+    var minimumIndex = findIndexOfMinimumValue(array, i)
+    swap(array, i, minimumIndex)
   }
 
-  return sortedArray
+  return array
 }
