@@ -1,11 +1,11 @@
-const swap = function(array, firstIndex, secondIndex) {
+function swap(array, firstIndex, secondIndex) {
   var firstItem = array[firstIndex]
   array[firstIndex] = array[secondIndex]
   array[secondIndex] = firstItem
   return array
 }
 
-const findIndexOfMinimumValue = function(array, index) {
+function findIndexOfMinimumValue(array, index) {
   let minimumValue = array[index]
   let minimumIndex = index;
 
@@ -19,7 +19,7 @@ const findIndexOfMinimumValue = function(array, index) {
   return minimumIndex
 }
 
-const selectionSort = function(array) {
+function selectionSort(array) {
   for (var i = 0; i < array.length; i++) {
     var minimumIndex = findIndexOfMinimumValue(array, i)
     swap(array, i, minimumIndex)
