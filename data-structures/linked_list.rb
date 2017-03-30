@@ -20,12 +20,6 @@ class LinkedList
     @head = node
   end
 
-  # Prints a string representation of link_list
-  def to_str
-    self.each do |node|
-      puts node.to_str()
-    end
-  end
 
   # Creates a sample list with 11 nodes
   def self.seed
@@ -37,6 +31,13 @@ class LinkedList
   end
 
   # Methods to get information about the list
+  
+  # Prints a string representation of link_list
+  def to_str
+    self.each do |node|
+      puts node.to_str()
+    end
+  end
 
   # Returns the last node in the list
   def tail
