@@ -1,6 +1,6 @@
 # HT Scott Young (https://github.com/SYoung82/linked-lists)
-# note: this was originally called LinkedList even though it describes a doubly linked liest,
-# I changed all references in the code, but the comments still contain references to LinkedList
+# note: this was originally called DoublyLinkedList even though it describes a doubly linked liest,
+# I changed all references in the code, but the comments still contain references to DoublyLinkedList
 # for linked lists see https://github.com/achasveachas/Algorithms/blob/master/data-structures/linked_list.rb
 
 class Node
@@ -19,53 +19,53 @@ class Node
 end
 
 
-class DoublyLinkedList
+class DoublyDoublyLinkedList
     attr_accessor :head
 
-    #LinkedList.new(headNode), creates a new LinkedList object
-    #Returns new LinkedList obj whose head points to the first node
-    def initialize(headNode = nil)
-        @head = headNode
+    #DoublyLinkedList.new(head_node), creates a new DoublyLinkedList object
+    #Returns new DoublyLinkedList obj whose head points to the first node
+    def initialize(head_node = nil)
+        @head = head_node
     end
 
-    #link_list.insertHead(newNode)
-    #Returns new LinkedList obj whose head is newNode
-    def insertHead(newNode)
-        if newNode
-            newNode.next = self.head
-            self.head = newNode
+    #link_list.insert_head(new_node)
+    #Returns new DoublyLinkedList obj whose head is new_node
+    def insert_head(new_node)
+        if new_node
+            new_node.next = self.head
+            self.head = new_node
         end
     end
 
-    #link_list.insertTail(newNode)
-    #Returns new LinkedList obj whose tail node is newNode
-    def insertTail(newNode)
-        currentNode = self.head
+    #link_list.insert_tail(new_node)
+    #Returns new DoublyLinkedList obj whose tail node is new_node
+    def insert_tail(new_node)
+        current_node = self.head
 
-        while currentNode.next != nil
-            currentNode = currentNode.next
+        while current_node.next != nil
+            current_node = current_node.next
         end
 
-        currentNode.next = newNode
-        newNode.prev = currentNode
+        current_node.next = new_node
+        new_node.prev = current_node
     end
 
-    #link_list.insertAfter(node, newNode)
-    #Returns new LinkedList obj with newNode inserted after node if found
+    #link_list.insert_after(node, new_node)
+    #Returns new DoublyLinkedList obj with new_node inserted after node if found
     #    else returns false
-    def insertAfter(node, newNode)
-        currentNode = self.head
+    def insert_after(node, new_node)
+        current_node = self.head
 
-        while currentNode != node && currentNode != nil
-            currentNode = currentNode.next
+        while current_node != node && current_node != nil
+            current_node = current_node.next
         end
 
-        if currentNode && currentNode.next
-            newNode.next = currentNode.next
-            currentNode.next = newNode
+        if current_node && current_node.next
+            new_node.next = current_node.next
+            current_node.next = new_node
             return self
-        elsif currentNode
-            currentNode.next = newNode
+        elsif current_node
+            current_node.next = new_node
             return self
         else
             return false
@@ -73,7 +73,7 @@ class DoublyLinkedList
     end
 
     #link_list.delete(node)
-    #Returns new LinkedList obj with node removed if found
+    #Returns new DoublyLinkedList obj with node removed if found
     def delete(node)
         if node.prev != nil
             node.prev.next = node.next
@@ -91,22 +91,22 @@ class DoublyLinkedList
     #link_list.search(value)
     #Returns Node obj whose value = value if found
     def search(value)
-        currentNode = self.head
+        current_node = self.head
 
-        while currentNode != nil && currentNode.value != value
-            currentNode = currentNode.next
+        while current_node != nil && current_node.value != value
+            current_node = current_node.next
         end
 
-        return currentNode
+        return current_node
     end
 
     #link_list.each do |block|
     #Yields each node in the link_list to block
     def each(&block)
-        currentNode = self.head
-        while currentNode != nil
-            yield currentNode
-            currentNode = currentNode.next
+        current_node = self.head
+        while current_node != nil
+            yield current_node
+            current_node = current_node.next
         end
     end
 
