@@ -1,6 +1,7 @@
 # HT Scott Young (https://github.com/SYoung82/linked-lists)
 # note: this was originally called LinkedList even though it describes a doubly linked liest,
 # I changed all references in the code, but the comments still contain references to LinkedList
+# for linked lists see https://github.com/achasveachas/Algorithms/blob/master/data-structures/linked_list.rb
 
 class Node
     attr_accessor :value, :next, :prev
