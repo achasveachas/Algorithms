@@ -1,3 +1,7 @@
+# HT Scott Young (https://github.com/SYoung82/linked-lists)
+# note: this was originally called LinkedList even though it describes a doubly linked liest,
+# I changed all references in the code, but the comments still contain references to LinkedList
+
 class Node
     attr_accessor :value, :next, :prev
 
