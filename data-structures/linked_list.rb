@@ -6,7 +6,7 @@ class Node
   end
 
   def to_str()
-      "Node::  value - #{self.value}, next node - #{self.next || "nil"}"
+      "Node::  value - #{self.value}, next node - #{(self.next && self.next.value) || "nil"}"
   end
 end
 
@@ -34,9 +34,32 @@ class LinkedList
     self
   end
 
-  def add_to_tail(node)
-    current_tail = self.tail
-    current_tail.next = node
+  def add(node)
+    self.tail.next = node
     self
+  end
+
+  def length
+    length = 0
+    self.each do
+      length += 1
+    end
+    length
+  end
+
+  def each(&block)
+      current_node = self.head
+      while current_node != nil
+          yield current_node
+          current_node = current_node.next
+      end
+  end
+
+  #link_list.to_str()
+  #Prints a string representation of link_list
+  def to_str()
+      self.each do |node|
+          puts node.to_str()
+      end
   end
 end
