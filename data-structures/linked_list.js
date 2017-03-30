@@ -42,7 +42,6 @@ class LinkedList {
   searchNodeAt(position) {
     let currentNode = this.head;
 
-    // the position isn't valid? is the length of the list 0? is the position less than 1? or is the position greater than the length of the list?
     this.isValidPosition(position)
 
     // the position is valid?
