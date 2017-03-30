@@ -46,18 +46,28 @@ class LinkedList
     length
   end
 
-  def find(value)
-    found = false
+  def contains?(value)
+    contains = false
     self.each do |node|
-      found = true if node.value == value
+      contains = true if node.value == value
     end
-    found
+    contains
+  end
+
+  def find(value)
+    found_node = nil
+    self.each do |node|
+      if node.value == value
+        return node
+      end
+    end
+    found_node
   end
 
   #methods to add to the list
 
   def add_to_head(node)
-    if self.find(node.value)
+    if self.contains?(node.value)
       puts "Sorry, a node with value #{node.value} already exists"
     else
       node.next = self.head
@@ -68,7 +78,7 @@ class LinkedList
   end
 
   def add(node)
-    if self.find(node.value)
+    if self.contains?(node.value)
       puts "Sorry, a node with value #{node.value} already exists"
     else
       self.tail.next = node
