@@ -80,6 +80,14 @@ class LinkedList
     found_node
   end
 
+  def find_before(value)
+    before = nil
+    each do |node|
+      before = node if node.next && node.next.value == value
+    end
+    before
+  end
+
   # Methods to add to the list
 
   # Adds a node to the head of the list (redfining the head in the process)
@@ -134,20 +142,15 @@ class LinkedList
     # Next check if we're removing the head (as that would require we define head.next as the new head)
     if head.value == value
       self.head = self.head.next
-      return to_str
+      return puts "The Head Node with value '#{value}' has been removed"
     end
 
     # Find the node before the one we want to remove
-    before_remove = nil
-    each do |node|
-      if node.next && node.next.value == value
-        before_remove = node
-      end
-    end
+    before_remove = find_before(value)
 
     to_remove = before_remove.next
     before_remove.next = to_remove.next
-    to_str
+    puts "Node with value '#{value}' has been removed"
   end
 
   # Methods to manipulate the list
