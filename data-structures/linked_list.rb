@@ -6,7 +6,7 @@ class Node
   end
 
   def to_str()
-      "Node::  value - #{self.value}, next node - #{(self.next && self.next.value) || "nil"}"
+      "Node::  value - #{value}, next node - #{(self.next && self.next.value) || "nil"}"
   end
 end
 
@@ -16,7 +16,7 @@ class LinkedList
 
   # Class methods
 
-  def initialize(node = Node.new("Head"))
+  def initialize(node = nil)
     @head = node
   end
 
@@ -31,29 +31,32 @@ class LinkedList
   end
 
   # Methods to get information about the list
-  
+
   # Prints a string representation of link_list
   def to_str
-    self.each do |node|
+    each do |node|
       puts node.to_str()
     end
   end
 
   # Returns the last node in the list
   def tail
-    current_node = self.head
+    if head
 
-    until current_node.next == nil
-      current_node = current_node.next
+      current_node = head
+
+      until !!current_node && current_node.next == nil
+        current_node = current_node.next
+      end
+
+      current_node
     end
-
-    current_node
   end
 
   # Returns the number of nodes in the list
   def length
     length = 0
-    self.each{ length += 1}
+    each{ length += 1}
     length
   end
 
@@ -92,37 +95,37 @@ class LinkedList
   end
 
   # Add a node after a node with given value (if no value (or invalid value) is given, the node will be added to the tail of the list)
-  def add(node, value = self.tail.value)
+  def add(node, value = nil)
 
-    if !self.contains?(value)
+    if value && !self.contains?(value)
       # Make sure the value you want to insert after exists, otherwise we will add it to the tail
       puts "Sorry, a node with value #{value} does not exist, the node will be added to the end of the list"
-      value = self.tail.value
+      value = nil
     end
 
     # First make sure we don't already have a node with that value
     if self.contains?(node.value)
       puts "Sorry, a node with value #{node.value} already exists"
-    elsif value == self.tail.value
+    elsif self.length == 0
+      # If it's an empty list, the added node becomes head
+      self.head = node
+    elsif value == nil
       # If we're adding to the tail we don't need to set node.next
       self.tail.next = node
-      puts "Node #{node.value} was added to the end of the list"
     else
       before_insert = self.find(value)
       node.next = before_insert.next
       before_insert.next = node
-      puts "Node #{node.value} was added to the after Node #{before_insert.value}"
     end
     self.to_str
   end
 
   # Methods to remove from list
 
-  # Removes the node with the given value
-  def remove(value)
+  # Removes the node with the given value, if no value is given the tail will be removed
+  def remove(value = self.tail.value)
 
     # first we want to make sure we have a node with that value
-
     if !self.contains?(value)
       puts "Couldn't find a node with value #{value}"
       return self.to_str
@@ -131,7 +134,6 @@ class LinkedList
     # Next check if we're removing the head (as that would require we define head.next as the new head)
     if self.head.value == value
       self.head = self.head.next
-      puts "Removed node with value #{value}"
       return self.to_str
     end
 
@@ -145,8 +147,17 @@ class LinkedList
 
     to_remove = before_remove.next
     before_remove.next = to_remove.next
-    puts "Node with value #{to_remove.value} has been removed"
     self.to_str
+  end
+
+  # Methods to manipulate the list
+
+  def reverse
+    reversed_list = LinkedList.new
+    each do |node|
+      reversed_list.add_to_head(Node.new(node.value))
+    end
+    reversed_list
   end
 
   #iterators
