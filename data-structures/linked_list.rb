@@ -63,7 +63,7 @@ class LinkedList
   # Returns true if the list contains a node with given value
   def contains?(value)
     contains = false
-    self.each do |node|
+    each do |node|
       contains = true if node.value == value
     end
     contains
@@ -72,7 +72,7 @@ class LinkedList
   # Returns a node if the list contains a node with given value
   def find(value)
     found_node = nil
-    self.each do |node|
+    each do |node|
       if node.value == value
         return node
       end
@@ -84,14 +84,14 @@ class LinkedList
 
   # Adds a node to the head of the list (redfining the head in the process)
   def add_to_head(node)
-    if self.contains?(node.value)
+    if contains?(node.value)
       puts "Sorry, a node with value #{node.value} already exists"
     else
-      node.next = self.head
+      node.next = head
       self.head = node
       puts "Node #{node.value} was added to the head of the list"
     end
-    self.to_str
+    to_str
   end
 
   # Add a node after a node with given value (if no value (or invalid value) is given, the node will be added to the tail of the list)
@@ -106,40 +106,40 @@ class LinkedList
     # First make sure we don't already have a node with that value
     if self.contains?(node.value)
       puts "Sorry, a node with value #{node.value} already exists"
-    elsif self.length == 0
+    elsif length == 0
       # If it's an empty list, the added node becomes head
       self.head = node
     elsif value == nil
       # If we're adding to the tail we don't need to set node.next
-      self.tail.next = node
+      tail.next = node
     else
-      before_insert = self.find(value)
+      before_insert = find(value)
       node.next = before_insert.next
       before_insert.next = node
     end
-    self.to_str
+    to_str
   end
 
   # Methods to remove from list
 
   # Removes the node with the given value, if no value is given the tail will be removed
-  def remove(value = self.tail.value)
+  def remove(value = tail.value)
 
     # first we want to make sure we have a node with that value
-    if !self.contains?(value)
+    if !contains?(value)
       puts "Couldn't find a node with value #{value}"
-      return self.to_str
+      return to_str
     end
 
     # Next check if we're removing the head (as that would require we define head.next as the new head)
-    if self.head.value == value
+    if head.value == value
       self.head = self.head.next
-      return self.to_str
+      return to_str
     end
 
     # Find the node before the one we want to remove
     before_remove = nil
-    self.each do |node|
+    each do |node|
       if node.next && node.next.value == value
         before_remove = node
       end
@@ -147,7 +147,7 @@ class LinkedList
 
     to_remove = before_remove.next
     before_remove.next = to_remove.next
-    self.to_str
+    to_str
   end
 
   # Methods to manipulate the list
