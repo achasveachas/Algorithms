@@ -80,6 +80,7 @@ class LinkedList
     found_node
   end
 
+  # Returns the node immediately preceding the node with a given value
   def find_before(value)
     before = nil
     each do |node|
