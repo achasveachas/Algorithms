@@ -11,7 +11,9 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 
 ### Search Algorithms
 
-+ [Binary (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/search/binary-search.rb)
++ [Binary Search (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/search/binary_search.rb)
++ [Breadth First Search (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/search/breadth_first.rb)
++ [Linear Search (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/search/linear_search.rb)
 
 ### Sorting Algorithms
 
