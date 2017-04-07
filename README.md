@@ -17,4 +17,5 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 
 ### Sorting Algorithms
 
-+ [Selection Sort (JS)](https://github.com/achasveachas/Algorithms/blob/master/sort/selection-sort.js)
++ [Selection Sort (JS)](https://github.com/achasveachas/Algorithms/blob/master/sort/selection_sort.js)
++ [Selection Sort (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/sort/selection_sort.rb)
