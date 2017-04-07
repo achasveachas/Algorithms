@@ -17,5 +17,6 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 
 ### Sorting Algorithms
 
++ [Bubble Sort (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/sort/bubble_sort.rb)
 + [Selection Sort (JS)](https://github.com/achasveachas/Algorithms/blob/master/sort/selection_sort.js)
 + [Selection Sort (Ruby)](https://github.com/achasveachas/Algorithms/blob/master/sort/selection_sort.rb)
