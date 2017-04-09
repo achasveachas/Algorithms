@@ -84,21 +84,20 @@ class DoublyLinkedList
             node.next.prev = node.prev
         end
 
-        return self
+        self
     end
 
     #link_list.search(value)
     #Returns Node obj whose value = value if found
     def search(value)
-        current_node = self.head
-
-        while current_node != nil && current_node.value != value
-            current_node = current_node.next
-        end
-
-        return current_node
+      each do |node|
+        return node if node.value == value
+      end
+      nil
     end
 
+    #link_list.tail
+    #Returns the last Node obj in the linked_list
     def tail
       if head
         current_node = head

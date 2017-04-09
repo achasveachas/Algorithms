@@ -71,13 +71,10 @@ class LinkedList
 
   # Returns a node if the list contains a node with given value
   def find(value)
-    found_node = nil
     each do |node|
-      if node.value == value
-        return node
-      end
+      return node if node.value == value
     end
-    found_node
+    nil
   end
 
   # Returns the node immediately preceding the node with a given value
