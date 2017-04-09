@@ -99,6 +99,16 @@ class DoublyLinkedList
         return current_node
     end
 
+    def tail
+      if head
+        current_node = head
+        until !!current_node && current_node.next == nil
+          current_node = current_node.next
+        end
+        current_node
+      end
+    end
+
     #link_list.each do |block|
     #Yields each node in the link_list to block
     def each(&block)
