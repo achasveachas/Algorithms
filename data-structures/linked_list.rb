@@ -34,9 +34,7 @@ class LinkedList
 
   # Prints a string representation of link_list
   def to_str
-    each do |node|
-      puts node.to_str()
-    end
+    each {|node| puts node.to_str}
   end
 
   # Returns the last node in the list
@@ -63,27 +61,20 @@ class LinkedList
   # Returns true if the list contains a node with given value
   def contains?(value)
     contains = false
-    each do |node|
-      contains = true if node.value == value
-    end
+    each {|node| contains = true if node.value == value}
     contains
   end
 
   # Returns a node if the list contains a node with given value
   def find(value)
-    each do |node|
-      return node if node.value == value
-    end
+    each {|node| return node if node.value == value}
     nil
   end
 
   # Returns the node immediately preceding the node with a given value
   def find_before(value)
-    before = nil
-    each do |node|
-      before = node if node.next&.value == value
-    end
-    before
+    each {|node| return node if node.next&.value == value}
+    nil
   end
 
   # Methods to add to the list
