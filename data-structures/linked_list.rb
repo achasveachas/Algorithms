@@ -6,7 +6,7 @@ class Node
   end
 
   def to_str()
-      "Node::  value - #{value}, next node - #{(self.next && self.next.value) || "nil"}"
+      "Node::  value - #{value}, next node - #{self.next&.value || "nil"}"
   end
 end
 
@@ -45,7 +45,7 @@ class LinkedList
 
       current_node = head
 
-      until !!current_node && current_node.next == nil
+      until current_node&.next == nil
         current_node = current_node.next
       end
 
@@ -81,7 +81,7 @@ class LinkedList
   def find_before(value)
     before = nil
     each do |node|
-      before = node if node.next && node.next.value == value
+      before = node if node.next&.value == value
     end
     before
   end
