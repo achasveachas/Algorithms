@@ -8,7 +8,3 @@ def linear_search(enumerable, value)
 
   false
 end
-
-arr = [1,3,5,7,11]
-
-puts linear_search(arr, 4)
