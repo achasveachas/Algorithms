@@ -15,5 +15,16 @@ def inefficient_sort(sock_pile)
 end
 
 def efficient_sort(sock_pile)
-
+  sorted_socks = []
+  unsorted_socks = []
+  until sock_pile.size == 0
+   sock1 = sock_pile.pop
+   sock2 = unsorted_socks.find {|sock| sock == sock1}
+   if sock2
+     sorted_socks << [sock1, sock2]
+   else
+     unsorted_socks << sock1
+   end
+  end
+  sorted_socks
 end
