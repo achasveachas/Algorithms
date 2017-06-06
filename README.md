@@ -23,3 +23,4 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 + [Selection Sort (JS)](/sort/selection_sort.js)
 + [Selection Sort (Ruby)](/sort/selection_sort.rb)
 + [Insertion Sort (JS)](/sort/insertion_sort.js)
++ [Merge Sort (JS)](/sort/merge_sort.js)
