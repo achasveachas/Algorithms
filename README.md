@@ -9,7 +9,7 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 + [Doubly Linked List (Ruby)](/data-structures/doubly_linked_lists.rb)
 
 ### Recursion
-+ [Various Recursive Functions (JS)](/Recursion/recursion-lab-v-000/index.js)
++ [Various Recursive Functions (JS)](/Recursion/recursion.js)
 
 ### Search Algorithms
 
@@ -22,4 +22,4 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 + [Bubble Sort (Ruby)](/sort/bubble_sort.rb)
 + [Selection Sort (JS)](/sort/selection_sort.js)
 + [Selection Sort (Ruby)](/sort/selection_sort.rb)
-+ [Insertion Sort (JS)](/sort/insertion-sort-lab-v-000/index.js)
++ [Insertion Sort (JS)](/sort/insertion_sort.js)
