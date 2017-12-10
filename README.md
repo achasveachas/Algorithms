@@ -24,3 +24,8 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 + [Selection Sort (Ruby)](/sort/selection_sort.rb)
 + [Insertion Sort (JS)](/sort/insertion_sort.js)
 + [Merge Sort (JS)](/sort/merge_sort.js)
+
+### Miscellaneous Algorithms
+
++ [Simple Parentheses Checker (JS)](/other/paren_checker.js)
++ [complex Parentheses Checker (Ruby)](/other/paren_checker.rb)
