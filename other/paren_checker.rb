@@ -32,7 +32,7 @@ def paren_checker(string)
             end 
             
         end
-        puts stack.join(", ")
+
     end
     # Return true if the stack is empty (no opening parentheses left)
     stack.size == 0
