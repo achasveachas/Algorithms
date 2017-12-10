@@ -28,4 +28,4 @@ This repo contains some algorithms that I've written, mostly in JavaScript and R
 ### Miscellaneous Algorithms
 
 + [Simple Parentheses Checker (JS)](/other/paren_checker.js)
-+ [complex Parentheses Checker (Ruby)](/other/paren_checker.rb)
++ [Complex Parentheses Checker (Ruby)](/other/paren_checker.rb)
